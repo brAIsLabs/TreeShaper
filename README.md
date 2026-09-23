@@ -8,6 +8,19 @@ Herramienta para inventariar directorios locales y de red (fileservers Windows/N
 
 ## Qué hace
 
+```mermaid
+flowchart LR
+    A[("Carpeta local<br/>o de red (UNC)")] -->|"Inventario-Rutas.ps1<br/>solo lectura"| B["inventario.json"]
+    B --> C["Organizador-Rutas.html<br/>(en el navegador)"]
+    C --> D["Clasificar<br/>Mantener · Revisar · Reubicar · Eliminar"]
+    C --> E["Reestructurar en virtual<br/>mover · fusionar · crear carpetas"]
+    C --> F["Anonimizar<br/>emails, DNI, IBAN, nombres"]
+    D --> G["Exportar<br/>plan CSV · versión de trabajo JSON"]
+    E --> G
+    F --> G
+    G -.->|"futuro: validación, preview<br/>y confirmación"| H[("Cambios en<br/>el disco")]
+```
+
 1. **`Inventario-Rutas.ps1`** recorre una carpeta (local, UNC o unidad mapeada) y genera un JSON con su árbol: carpetas, ficheros, tamaños y fechas de modificación.
 2. **`Organizador-Rutas.html`** carga uno o varios de esos JSON en el navegador y permite:
    - clasificar cada elemento (Mantener, Revisar, Reubicar, Eliminar);

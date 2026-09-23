@@ -1,0 +1,7 @@
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Inventarios generados (contienen usuario, equipo y rutas reales)
+inventario_*.json
